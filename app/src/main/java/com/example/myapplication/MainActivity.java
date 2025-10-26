@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Button logoutBtn = findViewById(R.id.logout_button);
         logoutBtn.setOnClickListener(v -> {
-            // your report action
-            Toast.makeText(this, "Report tapped", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, LoginPage.class);
+            startActivity(intent);
         });
 
 
@@ -145,6 +145,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         };
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override
