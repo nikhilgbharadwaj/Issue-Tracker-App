@@ -33,8 +33,8 @@ public class Report extends AppCompatActivity {
     private TextView locationTV;
     private Button submitBtn;
     private Bitmap capturedImage;
-    private String latitude = "12.9716"; // Replace with dynamic location
-    private String longitude = "77.5946"; // Replace with dynamic location
+    private String latitude; // Replace with dynamic location
+    private String longitude; // Replace with dynamic location
 
     private DatabaseReference database;
     private StorageReference storage;
@@ -50,6 +50,9 @@ public class Report extends AppCompatActivity {
         descET = findViewById(R.id.issueDescET);
         locationTV = findViewById(R.id.locationofreport);
         submitBtn = findViewById(R.id.submitbtn);
+        Intent intent = getIntent();
+        latitude = intent.getStringExtra("LATITUDE");
+        longitude =intent.getStringExtra("LONGITUDE");
 
         locationTV.setText(latitude + "," + longitude);
 
